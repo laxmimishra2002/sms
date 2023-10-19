@@ -20,6 +20,14 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public int addStudent(Registration registration) {
 		// TODO Auto-generated method stub
+		validate(registration);
+		studentRepository.save(registration);
+
+		
+
+		return 1;
+	}
+	private int validate(Registration registration) {
 		if (!registration.getEmail().contains("@")) {
 		return 0;
 		}
@@ -71,10 +79,6 @@ public class StudentServiceImpl implements StudentService {
 			return 0;
 
 		}
-		studentRepository.save(registration);
-
-		
-
 		return 1;
 	}
 	@Override
