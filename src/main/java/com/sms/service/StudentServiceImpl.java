@@ -3,6 +3,8 @@
  */
 package com.sms.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -82,12 +84,18 @@ public class StudentServiceImpl implements StudentService {
 		return 1;
 	}
 	@Override
-	public int update(Registration student) {
-		// TODO Auto-generated method stub
-		return 0;
+	public Registration update(Registration student) {
+		
+		return studentRepository.save(student);
 	}
-	public int delete(Registration student) {
-		return 0;
+	public void delete(Registration student) {
+		 studentRepository.delete(student);;
+	}
+	@Override
+	public Iterable<Registration> list() {
+		// TODO Auto-generated method stub
+		return studentRepository.findAll();
+		 
 	}
 
 }

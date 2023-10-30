@@ -33,6 +33,7 @@ public class Registration {
 	String password;
 	String address;
 	String department;
+	
 
 	public int getStudentid() {
 		return studentid;

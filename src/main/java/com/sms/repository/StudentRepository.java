@@ -8,5 +8,6 @@ import com.sms.dto.Registration;
 @Repository
 public interface StudentRepository extends CrudRepository<Registration, Long>{
 
+
 	
 }
