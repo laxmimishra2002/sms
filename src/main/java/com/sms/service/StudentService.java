@@ -1,6 +1,6 @@
 package com.sms.service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Component;
 
@@ -11,6 +11,7 @@ public interface StudentService {
 
 	public int addStudent(Registration registration);
 	public Registration update(Registration student);
-	public void delete(Registration student);
+	public void delete(Long studentId);
 	public Iterable<Registration>  list();
+	public  Optional<Registration> getStudentDetail(Long id);
 }
